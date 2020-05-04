@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="input-group mb-3 col-md-4">
+    <input #idEmployee type="number" class="form-control" placeholder="Id Employee" aria-label="Id Employeee" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-success" type="button" (click)="getEmployees(idEmployee.value)">  <i class="fa fa-search"></i> Get Employees </button>
+    </div>
+  </div>
+<hr />
+      <div>
+        <div *ngIf="employees.length">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Contract Type</th>
+                <th>Hourly Salary</th>
+                <th>Monthly Salary</th>
+                <th>Annual Salary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employees">
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.roleName}}</td>
+                <td>{{employee.contractTypeName}}</td>
+                <td>{{employee.hourlySalary | currency}}</td>
+                <td>{{employee.monthlySalary | currency}}</td>
+                <td>{{employee.annualSalary | currency}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div *ngIf="employees.length == 0">
+          <div class="alert alert-warning" role="alert">
+            <strong>Warning!</strong> There are no employees registered with this Id
+          </div>
+        </div>
+      </div>
+
+
