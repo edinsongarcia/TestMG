@@ -2,12 +2,10 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MGapp.Logic
 {
-    public class EmployeeLogic
+	public class EmployeeLogic
     {
         public List<EmployeeDTO> GetEmployees()
         {

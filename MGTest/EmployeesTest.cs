@@ -10,7 +10,7 @@ namespace MGTest
     public class EmployeesTest
     {
         [TestMethod]
-        public void GetAnnualSalary()
+        public void GetAnnualSalaryByContractType()
         {
             //Arrange
             EmployeeLogic logic = new EmployeeLogic();
